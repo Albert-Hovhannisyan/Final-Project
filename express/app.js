@@ -20,7 +20,7 @@ app.use(asyncHandler(authMiddleware));
 app.use('/users', userController);
 
 async function bootstrap() {
-    await mongoose.connect(process.env.MONGO_URL);
+    await mongoose.connect(process.env.MONGO_URI);
     console.log('DB connected successfully.');
     app.listen(port, () => {
         console.log(`Server is running on port ${port}`);
