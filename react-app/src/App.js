@@ -24,16 +24,16 @@ function App() {
   const handleLogout = () => setUser(null);
   return (
     <>
-      {/* <AppBarComponent /> */}
+      <div><AppBarComponent /></div>
 
-      <Navigation />
+      {/* <Navigation /> */}
 
       {user ? (
         <button onClick={handleLogout}>Sign Out</button>
       ) : (
         <button onClick={handleLogin}>Sign In</button>
       )}
-
+      
       <Routes>
         <Route index element={<Home />} />
         <Route path="home" element={<Home />} />
