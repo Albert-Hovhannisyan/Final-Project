@@ -31,9 +31,9 @@ module.exports = {
             email: user.email
         }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRES_IN });
 
-        user.token = token;
-
-        return user.save();
+        // user.token = token;
+        user.save()
+        return token;
     },
 
     getAllUsers() {
@@ -75,8 +75,8 @@ module.exports = {
             email: user.email
         }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRES_IN });
 
-        user.token = token;
+        //user.token = token;
 
-        return user;
+        return token;
     }
 }

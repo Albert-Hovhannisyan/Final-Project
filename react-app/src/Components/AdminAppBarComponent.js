@@ -4,9 +4,9 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Box from '@mui/material/Box';
 import {Link} from "react-router-dom"
 
-function AppBarComponent(){
+function AdminAppBarComponent(){
     return <AppBar>
-    {/* <Box m={1} display="flex" justifyContent="center" alignItems="center" fontSize={25}>Welcome</Box> */}
+    <Box m={1} display="flex" justifyContent="center" alignItems="center" fontSize={25}>Admin</Box>
     <Box m={1} display="flex" justifyContent="flex-end" alignItems="flex-end" position={"relative"}>
       <nav>
         <Link to="/home">
@@ -14,14 +14,14 @@ function AppBarComponent(){
             Home
           </Button>
         </Link>
-        <Link to="/register">
+        <Link to="/home">
           <Button variant="contained">
-            Register
+            Log Out
           </Button>
         </Link>
-        <Link to="/login">
+        <Link to="/addproduct">
           <Button variant="contained">
-            Log In
+            Add Product
           </Button>
         </Link>
       </nav>
@@ -29,4 +29,4 @@ function AppBarComponent(){
   </AppBar>
 }
 
-export default AppBarComponent;
+export default AdminAppBarComponent;

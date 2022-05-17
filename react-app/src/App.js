@@ -1,19 +1,28 @@
 import './App.css';
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import AppBarComponent from './Components/AppBarComponent';
-import RegisterFormComponent from "./Components/RegisterFormComponent";
 import { Routes, Route, Link, Navigate, Outlet } from 'react-router-dom';
+import AppBarComponent from './Components/AppBarComponent';
+import UserAppBarComponent from './Components/UserAppBarComponent';
+import AdminAppBarComponent from './Components/AdminAppBarComponent';
 import Home from "./Pages/Home";
-import Register from "./Pages/Register"
-import LogIn from "./Pages/LogIn"
+import HomeAdmin from "./Pages/HomeAdmin";
+import HomeUser from "./Pages/HomeUser";
+import LogIn from "./Pages/LogIn";
+import Register from "./Pages/Register";
+import AddProduct from './Pages/AddProduct';
+import DashboardUser from './DashboardUser';
+
+
 
 function App() {
   // return <React.Fragment>
   //   {/* <AppBarComponent /> */}
   //   {/* <RegisterFormComponent /> */}
   //   </React.Fragment>;
+
   const [user, setUser] = React.useState(null);
+
   const handleLogin = () =>
     setUser({
       id: '1',
@@ -22,11 +31,14 @@ function App() {
       roles: ['admin'],
     });
   const handleLogout = () => setUser(null);
+
   return (
     <>
-      <div><AppBarComponent /></div>
-
-      {/* <Navigation /> */}
+      <DashboardUser />
+      {/*<AppBarComponent />
+       <UserAppBarComponent/>
+      <AdminAppBarComponent/>
+      <Navigation /> */}
 
       {user ? (
         <button onClick={handleLogout}>Sign Out</button>
@@ -39,11 +51,14 @@ function App() {
         <Route path="home" element={<Home />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<LogIn />} />
-        <Route element={<ProtectedRoute isAllowed={!!user} />}>
+        <Route path="addproduct" element={<AddProduct />} />
+        {/* <Route path="shoppingcart" element={<ShoppingCart />} /> */}
+
+        {/* <Route element={<ProtectedRoute isAllowed={!!user} />}>
           <Route path="dashboard" element={<Dashboard />} />
         </Route>
         <Route path="analytics" element={ <ProtectedRoute redirectPath="/home" isAllowed={ !!user && user.permissions.includes('analyze') } > <Analytics /> </ProtectedRoute>} />
-        <Route path="admin" element={ <ProtectedRoute redirectPath="/home" isAllowed={!!user && user.roles.includes('admin')} > <Admin /> </ProtectedRoute> } />
+        <Route path="admin" element={ <ProtectedRoute redirectPath="/home" isAllowed={!!user && user.roles.includes('admin')} > <Admin /> </ProtectedRoute> } /> */}
         <Route path="*" element={<p>There's nothing here: 404!</p>} />
       </Routes>
     </>
@@ -62,7 +77,7 @@ const Navigation = () => (
 );
 
 const Dashboard = () => {
-  return <RegisterFormComponent />;
+  return;
 };
 
 const Analytics = () => {

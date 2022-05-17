@@ -3,11 +3,12 @@ const usersService = require('../../users/users.service');
 const jwt = require('jsonwebtoken');
 
 module.exports = async (req, res, next) => {
-    if (req.url === '/users/register/' || req.url === '/users/login/') {
+    if (req.url === '/users/register' || req.url === '/users/login') {
         return next();
     }
 
-    const token = req.body.token || req.headers["token"];
+    const token = req.headers["x-access-token"];
+
     if(!token){
         return res.status(403).send("A token is required for authentication");
     }
