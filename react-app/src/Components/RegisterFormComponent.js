@@ -1,9 +1,9 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-function RegisterFormComponent() {
+function RegisterFormComponent(submitHandler) {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+  const onSubmit = data => submitHandler(data);
   console.log(errors);
   
   return (

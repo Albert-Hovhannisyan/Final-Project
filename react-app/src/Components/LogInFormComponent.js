@@ -4,9 +4,9 @@ function LogInFormComponent(submitHandler) {
   const { register, handleSubmit, reset } = useForm();
   
   return (
-    <form onSubmit={handleSubmit((data) => { submitHandler(data); reset(); })}>
-      <input {...register("email", {required: true, maxLength: 100})} type="text" placeholder="Email" />
-      <input {...register("password", {required: true, maxLength: 100})} type="text" placeholder="Password" />
+    <form onSubmit={handleSubmit((data) => { submitHandler.handleSubmit(data); reset(); })}>
+      <input  type="text" placeholder="Email" {...register("email", {required: true, maxLength: 100})}/>
+      <input  type="text" placeholder="Password" {...register("password", {required: true, maxLength: 100})}/>
       <input type="submit" />
     </form>
   );

@@ -20,7 +20,7 @@ form {
 }
 
 p {
-  color: #bf1650;
+  color: #1976d2;
 }
 
 input {
@@ -47,7 +47,7 @@ label {
 
 button[type="submit"],
 input[type="submit"] {
-  background: #ec5990;
+  background: #1976d2;
   color: white;
   text-transform: uppercase;
   border: none;
@@ -60,7 +60,7 @@ input[type="submit"] {
 
 button[type="submit"]:hover,
 input[type="submit"]:hover {
-  background: #bf1650;
+  background: #1976d2;
 }
 
 button[type="submit"]:active,
