@@ -25,25 +25,46 @@ function DashboardUser() {
     //     // fetchUsers();
     // }, [])
 
-    // const logIn = useCallback(async (data) => {
-    //     console.log(data);
-    //     // const result = await axios.post('http://localhost:3001/users/login', data);
-    //     // setUsers(result.data);
-    //     // fetchUsers();
-    // }, [])
-
-    const example = (data) => {
+    const logIn = useCallback(async (data) => {
         console.log(data);
-    }
+        // const result = await axios.post('http://localhost:3001/users/login', data);
+        // setUsers(result.data);
+        // fetchUsers();
+    }, [])
 
-  return (      
-        <div>
-            <AppBarComponent>
-                <LogInFormComponent handleSubmit={ example }/>
-                {/* <RegisterFormComponent submitHandler={ createUser } /> */}
-            </AppBarComponent>
-        </div>
-    )
+    const ggg = useCallback(async (data) => {
+        // await axios.post('http://localhost:3000/students', data);
+        alert('data')
+        console.log('data')
+        // fetchStudents();
+    }, [])
+
+        return (      
+                <div>
+                    <AppBarComponent />
+                        {/* <div><LogInFormComponent submitHandler={logIn}/></div> */}
+                        {/* <RegisterFormComponent submitHandler={ createUser } /> */}
+                    
+                    
+                </div>
+            )
+
+
+            // const createStudent = useCallback(async (data) => {
+            //     await axios.post('http://localhost:3000/students', data);
+            //     alert(data)
+            //     console.log(data.firstName)
+            //     // fetchStudents();
+            // }, [])
+        
+            // return (
+            //     <div>
+            //         <StudentForm submitHandler={createStudent} />
+            //         {/* <StudentList deleteStudentHandler={deleteStudent} students={students} /> */}
+            //     </div>
+            // )
+
 }
 
 export default DashboardUser;
+

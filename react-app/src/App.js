@@ -12,7 +12,7 @@ import LogIn from "./Pages/LogIn";
 import Register from "./Pages/Register";
 import AddProduct from './Pages/AddProduct';
 import DashboardUser from './DashboardUser';
-
+import Pricing from "./Pages/Pricing";
 
 
 function App() {
@@ -34,8 +34,9 @@ function App() {
 
   return (
     <>
-      <DashboardUser />
-      {/*<AppBarComponent />
+      {/* <DashboardUser /> */}
+      <AppBarComponent />
+      {/* <AppBarComponent />
        <UserAppBarComponent/>
       <AdminAppBarComponent/>
       <Navigation /> */}
@@ -48,7 +49,7 @@ function App() {
       
       <Routes>
         <Route index element={<Home />} />
-        <Route path="home" element={<Home />} />
+        <Route path="home" element={<Pricing />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<LogIn />} />
         <Route path="addproduct" element={<AddProduct />} />
