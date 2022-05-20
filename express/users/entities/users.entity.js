@@ -7,8 +7,7 @@ const userSchema = new mongoose.Schema({
     role: { type: String, default: "user" },
     address: { type: String, required: true },
     email: { type: String, required: true, unique: true },
-    password: { type: String, required: true },
-    token: { type: String }
+    password: { type: String, required: true }
 });
 
 userSchema.pre('save', function () {

@@ -35,11 +35,10 @@ function App() {
   return (
     <>
       {/* <DashboardUser /> */}
-      <AppBarComponent />
-      {/* <AppBarComponent />
-       <UserAppBarComponent/>
+      {/* <AppBarComponent /> */}
+      {/* <UserAppBarComponent/> */}
       <AdminAppBarComponent/>
-      <Navigation /> */}
+      {/* <Navigation /> */}
 
       {user ? (
         <button onClick={handleLogout}>Sign Out</button>
@@ -48,7 +47,7 @@ function App() {
       )}
       
       <Routes>
-        <Route index element={<Home />} />
+        {/* <Route index element={<Home />} /> */}
         <Route path="home" element={<Pricing />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<LogIn />} />
