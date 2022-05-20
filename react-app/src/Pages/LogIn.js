@@ -4,7 +4,9 @@ import LogInFormComponent from "../Components/LogInFormComponent";
 import RegisterFormComponent from "../Components/RegisterFormComponent";
 import AppBarComponent from "../Components/AppBarComponent";
 import Header from "../Components/Header";
-
+import AdminAppBarComponent from "../Components/AdminAppBarComponent";
+import UserAppBarComponent from "../Components/UserAppBarComponent";
+import { Navigate } from "react-router-dom"
 function LogIn() {
   const [users, setUsers] = useState([]);
 
@@ -20,22 +22,32 @@ function LogIn() {
       if (result.data) {
         localStorage.setItem("x-access-token", JSON.stringify(result.data));
       }
-      getUsers();
+      setUsers(result.data)
+      return <AdminAppBarComponent/>
   }, [])
 
   const logIn = useCallback(async (data) => {
     const result = await axios.post("http://localhost:3001/users/login", data);
     console.log(result.data);
-    // setUsers(result.data);
-    if (result.data) {
-      localStorage.setItem("x-access-token", JSON.stringify(result.data));
+    const token = result.data[0]
+    const role = result.data[1]
+    //setUsers(token);
+    if (token) {
+      localStorage.setItem("x-access-token", JSON.stringify(token));
     }
-    getUsers();
+    if(role == "admin"){
+      console.log("ADMIN");
+      <Navigate to="/admin" true/>
+      // return <Link to="/admin"/>
+    }
+    else{
+      return <UserAppBarComponent/>
+    }
   }, []);
 
   return (
     <div>
-      <LogInFormComponent submitHandler={logIn} />
+      <LogInFormComponent submitHandler={logIn}/>
       {/* <RegisterFormComponent submitHandler={createUser}/> */}
     </div>
   );

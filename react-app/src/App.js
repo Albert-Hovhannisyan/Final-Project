@@ -14,28 +14,23 @@ import AddProduct from './Pages/AddProduct';
 import DashboardUser from './DashboardUser';
 import Pricing from "./Pages/Pricing";
 
-
 function App() {
-  // return <React.Fragment>
-  //   {/* <AppBarComponent /> */}
-  //   {/* <RegisterFormComponent /> */}
-  //   </React.Fragment>;
 
   const [user, setUser] = React.useState(null);
 
-  const handleLogin = () =>
-    setUser({
-      id: '1',
-      name: 'robin',
-      permissions: ['analyze'],
-      roles: ['admin'],
-    });
-  const handleLogout = () => setUser(null);
+  // const handleLogin = () =>
+  //   setUser({
+  //     id: '1',
+  //     name: 'robin',
+  //     permissions: ['analyze'],
+  //     roles: ['admin'],
+  //   });
+  // const handleLogout = () => setUser(null);
 
   return (
     <>
       {/* <DashboardUser /> */}
-      <AppBarComponent />
+      {/* <AppBarComponent user={user}/> */}
       {/* <UserAppBarComponent/> */}
       {/* <AdminAppBarComponent/> */}
       {/* <Navigation /> */}
@@ -47,18 +42,19 @@ function App() {
       )} */}
       
       <Routes>
-        <Route index element={<Pricing />} />
+        <Route index element={<AppBarComponent />} />
         <Route path="home" element={<Pricing />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<LogIn />} />
         <Route path="addproduct" element={<AddProduct />} />
+        <Route path="admin" element={<AdminAppBarComponent />} />
         {/* <Route path="shoppingcart" element={<ShoppingCart />} /> */}
 
         {/* <Route element={<ProtectedRoute isAllowed={!!user} />}>
           <Route path="dashboard" element={<Dashboard />} />
         </Route>
         <Route path="analytics" element={ <ProtectedRoute redirectPath="/home" isAllowed={ !!user && user.permissions.includes('analyze') } > <Analytics /> </ProtectedRoute>} />
-        <Route path="admin" element={ <ProtectedRoute redirectPath="/home" isAllowed={!!user && user.roles.includes('admin')} > <Admin /> </ProtectedRoute> } /> */}
+         */}
         <Route path="*" element={<p>There's nothing here: 404!</p>} />
       </Routes>
     </>
