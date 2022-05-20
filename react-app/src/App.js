@@ -47,7 +47,7 @@ function App() {
       )} */}
       
       <Routes>
-        {/* <Route index element={<Home />} /> */}
+        <Route index element={<Pricing />} />
         <Route path="home" element={<Pricing />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<LogIn />} />

@@ -145,6 +145,12 @@ function PricingContent() {
                       <Typography component="li" variant="h7" align="center">
                         {product.description}
                       </Typography>
+                      <Typography component="li" variant="h7" align="center">
+                        Age Group: {product.ageGroup}
+                      </Typography>
+                      <Typography component="li" variant="h7" align="center">
+                        Quantity: {product.quantity}
+                      </Typography>
                       <Typography component="li" variant="h6" align="center">
                         {product.price}
                         $
