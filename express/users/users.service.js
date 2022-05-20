@@ -77,6 +77,6 @@ module.exports = {
 
         //user.token = token;
 
-        return [token, user.role];
+        return [token, user.role, user.firstName];
     }
 }

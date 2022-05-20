@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       {/* <DashboardUser /> */}
-      {/* <AppBarComponent user={user}/> */}
+      <AppBarComponent/>
       {/* <UserAppBarComponent/> */}
       {/* <AdminAppBarComponent/> */}
       {/* <Navigation /> */}
@@ -48,6 +48,7 @@ function App() {
         <Route path="login" element={<LogIn />} />
         <Route path="addproduct" element={<AddProduct />} />
         <Route path="admin" element={<AdminAppBarComponent />} />
+        <Route path="user" element={<UserAppBarComponent />} />
         {/* <Route path="shoppingcart" element={<ShoppingCart />} /> */}
 
         {/* <Route element={<ProtectedRoute isAllowed={!!user} />}>
