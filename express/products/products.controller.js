@@ -11,10 +11,10 @@ route.delete('/:id/', asyncHandler(async (req, res) => {
     res.send(removedProduct);
 }))
 
-// route.post('/', asyncHandler(async (req, res) => {
-//     const newProduct = await productsService.createProduct(req.body);
-//     res.status(201).send(newProduct);
-// }))
+route.post('/', asyncHandler(async (req, res) => {
+    const newProduct = await productsService.createProduct(req.body);
+    res.status(201).send(newProduct);
+}))
 
 route.get('/:id/', asyncHandler(async (req, res, next) => {
     const index = req.params['id'];
