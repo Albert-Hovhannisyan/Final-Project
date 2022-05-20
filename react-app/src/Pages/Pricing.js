@@ -22,16 +22,22 @@ import GetProducts from "../Components/GetProducts"
 
 
 const styles = {
+    
     media: {
     height: 150,
     width: 150,
     paddingTop: '5', // 16:9,
     marginTop:'4',
     marginRight:'auto',
-    marginLeft:'auto'
+    marginLeft:'auto',
     }
 };
 
+const cardStyle = {
+  display: "block",
+  transitionDuration: "0.3s",
+  height: 300,
+};
 
 async function getval(){
   // const data = []
@@ -89,9 +95,10 @@ function PricingContent() {
               key={product.name}
               xs={12}
               // sm={tier.title === 'Enterprise' ? 12 : 6}
-              // md={4}
+              md={4}
             >
-              <Card>
+              <Card style={cardStyle}>
+                
               <CardMedia
                     // href={require('./b.jpg')} //{require('/Users/liaharutyunyan/Documents/GitHub/Final-Project/react-app/src/Components/b.jpg')} //{tier.imge} // require image
                     component="img"
@@ -123,12 +130,28 @@ function PricingContent() {
                       mb: 2,
                     }}
                   >
-                    <Typography component="h2" variant="h3" color="text.primary">
-                      ${product.price}
+                    {/* <Typography component="h2" variant="h3" color="text.primary" style={{whiteSpace: 'pre-line'}}> */}
+                      
+                      <ul>
+                      <Typography
+                        component="li"
+                        variant="h5"
+                        align="center"
+                      >
+                        {product.name} 
+                      </Typography>
+                  
+                    {/* </Typography> */}
+                    <Typography component="li" variant="h6" align="center">
+                      {product.price} 
                     </Typography>
-                    <Typography variant="h6" color="text.secondary">
+                    <Typography component="li" variant="h7" align="center">
+                      {product.description}
+                    </Typography>
+                    </ul>
+                    {/* <Typography variant="h6" color="text.secondary">
                       /mo
-                    </Typography>
+                    </Typography> */}
                     
 
                         
