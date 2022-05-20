@@ -40,11 +40,11 @@ function App() {
       {/* <AdminAppBarComponent/> */}
       {/* <Navigation /> */}
 
-      {user ? (
+      {/* {user ? (
         <button onClick={handleLogout}>Sign Out</button>
       ) : (
         <button onClick={handleLogin}>Sign In</button>
-      )}
+      )} */}
       
       <Routes>
         {/* <Route index element={<Home />} /> */}

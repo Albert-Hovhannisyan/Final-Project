@@ -16,7 +16,8 @@ code {
 
 form {
   max-width: 500px;
-  margin: 0 auto;
+  margin-left: 500px;
+  margin-top: 150px;
 }
 
 p {

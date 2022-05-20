@@ -1,36 +1,34 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardHeader from '@mui/material/CardHeader';
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
-import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
-import StarIcon from '@mui/icons-material/StarBorder';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-import GlobalStyles from '@mui/material/GlobalStyles';
-import Container from '@mui/material/Container';
-import { getAvatarUtilityClass, requirePropFactory } from '@mui/material';
+import CssBaseline from "@mui/material/CssBaseline";
+import Grid from "@mui/material/Grid";
+import StarIcon from "@mui/icons-material/StarBorder";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
+import GlobalStyles from "@mui/material/GlobalStyles";
+import Container from "@mui/material/Container";
+import { getAvatarUtilityClass, requirePropFactory } from "@mui/material";
 import PropTypes from "prop-types";
 
-import GetProducts from "../Components/GetProducts"
-
+import GetProducts from "../Components/GetProducts";
 
 const styles = {
-    
-    media: {
+  media: {
     height: 150,
     width: 150,
-    paddingTop: '5', // 16:9,
-    marginTop:'4',
-    marginRight:'auto',
-    marginLeft:'auto',
-    }
+    paddingTop: "5", // 16:9,
+    marginTop: "4",
+    marginRight: "auto",
+    marginLeft: "auto",
+  },
 };
 
 const cardStyle = {
@@ -39,26 +37,26 @@ const cardStyle = {
   height: 300,
 };
 
-async function getval(){
+async function getval() {
   // const data = []
-  const data = await GetProducts()
+  const data = await GetProducts();
   // console.log(data)
   // data1.map((product)=> (
   //   data.push(product)
   //   // console.log(product.name)
   // ))
-  return data
+  return data;
 }
 
-const data = []
-getval().then( (result) => {
+const data = [];
+getval().then((result) => {
   console.log(result);
 
-  result.map((product)=> (
+  result.map((product) =>
     data.push(product)
     // console.log(product.name)
-  ))
-})
+  );
+});
 // console.log(getval())
 
 // const data = getval()
@@ -66,11 +64,18 @@ getval().then( (result) => {
 function PricingContent() {
   return (
     <React.Fragment>
-      <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
+      <GlobalStyles
+        styles={{ ul: { margin: 0, padding: 0, listStyle: "none" } }}
+      />
       <CssBaseline />
-      
+
       {/* Hero unit */}
-      <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
+      <Container
+        disableGutters
+        maxWidth="sm"
+        component="main"
+        sx={{ pt: 8, pb: 6 }}
+      >
         {/* <Typography
           component="h1"
           variant="h2"
@@ -80,17 +85,19 @@ function PricingContent() {
         >
           Pricing
         </Typography> */}
-
       </Container>
       {/* End hero unit */}
-      <Container maxWidth='md' component="main" sx={{ pt: 8, pb: 6}} disableGutters={true}>
-        <Grid container spacing={2} alignItems="flex-end" columns={20} >
+      <Container
+        maxWidth="md"
+        component="main"
+        sx={{ pt: 8, pb: 6 }}
+        disableGutters={true}
+      >
+        <Grid container spacing={2} alignItems="flex-end" columns={20}>
           {data.map((product) => (
-             
             // Enterprise card is full width at sm breakpoint
-            
+
             <Grid
-              
               item
               key={product.name}
               xs={12}
@@ -98,14 +105,13 @@ function PricingContent() {
               md={4}
             >
               <Card style={cardStyle}>
-                
-              <CardMedia
-                    // href={require('./b.jpg')} //{require('/Users/liaharutyunyan/Documents/GitHub/Final-Project/react-app/src/Components/b.jpg')} //{tier.imge} // require image
-                    component="img"
-                    // title="Contemplative Reptile"
-                    style = {styles.media} // specify styles
-                    image={product.image} //{require('./b.jpg')}
-                    />
+                <CardMedia
+                  // href={require('./b.jpg')} //{require('/Users/liaharutyunyan/Documents/GitHub/Final-Project/react-app/src/Components/b.jpg')} //{tier.imge} // require image
+                  component="img"
+                  // title="Contemplative Reptile"
+                  style={styles.media} // specify styles
+                  image={product.image} //{require('./b.jpg')}
+                />
                 {/* <CardHeader
                   title={tier.title}
                   subheader={tier.subheader}
@@ -124,38 +130,29 @@ function PricingContent() {
                 <CardContent>
                   <Box
                     sx={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'baseline',
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "baseline",
                       mb: 2,
                     }}
                   >
                     {/* <Typography component="h2" variant="h3" color="text.primary" style={{whiteSpace: 'pre-line'}}> */}
-                      
-                      <ul>
-                      <Typography
-                        component="li"
-                        variant="h5"
-                        align="center"
-                      >
-                        {product.name} 
+
+                    <ul>
+                      <Typography component="li" variant="h5" align="center">
+                        {product.name}
                       </Typography>
-                  
-                    {/* </Typography> */}
-                    <Typography component="li" variant="h6" align="center">
-                      {product.price} 
-                    </Typography>
-                    <Typography component="li" variant="h7" align="center">
-                      {product.description}
-                    </Typography>
+                      <Typography component="li" variant="h7" align="center">
+                        {product.description}
+                      </Typography>
+                      <Typography component="li" variant="h6" align="center">
+                        {product.price}
+                        $
+                      </Typography>
                     </ul>
                     {/* <Typography variant="h6" color="text.secondary">
                       /mo
                     </Typography> */}
-                    
-
-                        
-                    
                   </Box>
                   <ul>
                     {/* {product.description.map((line) => (
@@ -180,37 +177,6 @@ function PricingContent() {
           ))}
         </Grid>
       </Container>
-      {/* Footer */}
-      <Container
-        maxWidth="md"
-        component="footer"
-        sx={{
-          borderTop: (theme) => `1px solid ${theme.palette.divider}`,
-          mt: 8,
-          py: [3, 6],
-        }}
-      >
-        {/* <Grid container spacing={4} justifyContent="space-evenly">
-          {footers.map((footer) => (
-            <Grid item xs={6} sm={3} key={footer.title}>
-              <Typography variant="h6" color="text.primary" gutterBottom>
-                {footer.title}
-              </Typography>
-              <ul>
-                {footer.description.map((item) => (
-                  <li key={item}>
-                    <Link href="#" variant="subtitle1" color="text.secondary">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </Grid>
-          ))}
-        </Grid> */}
-        {/* <Copyright sx={{ mt: 5 }} /> */}
-      </Container>
-      {/* End footer */}
     </React.Fragment>
   );
 }
@@ -221,7 +187,6 @@ function PricingContent() {
 // }
 
 // products().then(PricingContent)
-
 
 // PricingContent.propTypes = {
 //     imagePath: PropTypes.string
@@ -238,15 +203,14 @@ function PricingContent() {
 // const f = hi();
 
 // function PricingContent1(res) {
-  
+
 //   console.log('rttrge');
 //   console.log(res.res);
 // }
 PricingContent.propTypes = {
-  imagePath: PropTypes.string
+  imagePath: PropTypes.string,
 };
 
 export default function Pricing() {
   return <PricingContent />;
 }
-
