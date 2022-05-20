@@ -18,169 +18,8 @@ import Container from '@mui/material/Container';
 import { requirePropFactory } from '@mui/material';
 import PropTypes from "prop-types";
 
-// function Copyright(props) {
-//   return (
-//     <Typography variant="body2" color="text.secondary" align="center" {...props}>
-//       {'Copyright © '}
-//       <Link color="inherit" href="https://mui.com/">
-//         Your Website
-//       </Link>{' '}
-//       {new Date().getFullYear()}
-//       {'.'}
-//     </Typography>
-//   );
-// }
+import GetProducts from "../Components/GetProducts"
 
-const tiers = [
-  {
-    // s:'./b.jpg',
-    title: 'Free',
-    price: '122',
-    description: [
-      '8+ years old',
-      'Guarantee',
-      'Something else',
-    ],
-    buttonText: 'Add to Cart',
-    buttonVariant: 'outlined',
-    imge:'https://cdn.shopify.com/s/files/1/0049/3732/products/5_900x.jpg?v=1334936803',
-    
-  },
-  {
-    title: 'Pro',
-    // subheader: 'Most popular',
-    price: '15',
-    description: [
-        '8+ years old',
-        'Guarantee',
-        'Something else',
-    ],
-    buttonText: 'Add to Cart',
-    buttonVariant: 'outlined',
-    imge:'https://images.unsplash.com/photo-1609708536965-6e5b915b195b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dG95JTIwY2FyfGVufDB8fDB8fA%3D%3D&w=1000&q=80',
-  },
-  {
-    title: 'Enterprise',
-    price: '30',
-    description: [
-        '8+ years old',
-        'Guarantee',
-        'Something else',
-    ],
-    buttonText: 'Add to Cart',
-    buttonVariant: 'outlined',
-    imge:'https://cdn.shopify.com/s/files/1/0049/3732/products/5_900x.jpg?v=1334936803',
-  },
-  {
-    title: 'Enterprise',
-    price: '30',
-    description: [
-        '8+ years old',
-        'Guarantee',
-        'Something else',
-    ],
-    buttonText: 'Add to Cart',
-    buttonVariant: 'outlined',
-    imge:'https://images.unsplash.com/photo-1609708536965-6e5b915b195b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dG95JTIwY2FyfGVufDB8fDB8fA%3D%3D&w=1000&q=80',
-  },
-  {
-    title: 'Enterprise',
-    price: '30',
-    description: [
-        '8+ years old',
-        'Guarantee',
-        'Something else',
-    ],
-    buttonText: 'Add to Cart',
-    buttonVariant: 'outlined',
-    imge:'https://cdn.shopify.com/s/files/1/0049/3732/products/5_900x.jpg?v=1334936803',
-  },
-  {
-    title: 'Enterprise',
-    price: '30',
-    description: [
-        '8+ years old',
-        'Guarantee',
-        'Something else',
-    ],
-    buttonText: 'Add to Cart',
-    buttonVariant: 'outlined',
-    imge:'https://images.unsplash.com/photo-1609708536965-6e5b915b195b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dG95JTIwY2FyfGVufDB8fDB8fA%3D%3D&w=1000&q=80',
-  },
-  {
-    title: 'Enterprise',
-    price: '30',
-    description: [
-        '8+ years old',
-        'Guarantee',
-        'Something else',
-    ],
-    buttonText: 'Add to Cart',
-    buttonVariant: 'outlined',
-    imge:'https://cdn.shopify.com/s/files/1/0049/3732/products/5_900x.jpg?v=1334936803',
-  },
-  {
-    title: 'Enterprise',
-    price: '30',
-    description: [
-        '8+ years old',
-        'Guarantee',
-        'Something else',
-    ],
-    buttonText: 'Add to Cart',
-    buttonVariant: 'outlined',
-    imge:'https://images.unsplash.com/photo-1609708536965-6e5b915b195b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dG95JTIwY2FyfGVufDB8fDB8fA%3D%3D&w=1000&q=80',
-  },
-  {
-    title: 'Enterprise',
-    price: '30',
-    description: [
-        '8+ years old',
-        'Guarantee',
-        'Something else',
-    ],
-    buttonText: 'Add to Cart',
-    buttonVariant: 'outlined',
-    imge:'https://cdn.shopify.com/s/files/1/0049/3732/products/5_900x.jpg?v=1334936803',
-  },
-  {
-    title: 'Enterprise',
-    price: '30',
-    description: [
-        '8+ years old',
-        'Guarantee',
-        'Something else',
-    ],
-    buttonText: 'Add to Cart',
-    buttonVariant: 'outlined',
-    imge:'https://images.unsplash.com/photo-1609708536965-6e5b915b195b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dG95JTIwY2FyfGVufDB8fDB8fA%3D%3D&w=1000&q=80',
-  },
-];
-
-const footers = [
-  {
-    title: 'Company',
-    description: ['Team', 'History', 'Contact us', 'Locations'],
-  },
-  {
-    title: 'Features',
-    description: [
-      'Cool stuff',
-      'Random feature',
-      'Team feature',
-      'Developer stuff',
-      'Another one',
-    ],
-  },
-  {
-    title: 'Resources',
-    description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
-  },
-  {
-    title: 'Legal',
-    description: ['Privacy policy', 'Terms of use'],
-  },
-];
 
 const styles = {
     media: {
@@ -195,7 +34,28 @@ const styles = {
 
 
 
-function PricingContent() {
+// export const ValidComponent: React.FC = () => {
+//   const groceryList = [
+//     { name: "Bunch of Kale", quantityNeeded: 1 },
+//     { name: "Olive oil", quantityNeeded: 1 }
+//   ];
+//   return (
+//     <div>
+//       ✅ Valid
+//       <div>
+//         {groceryList.map((item) => (
+//           <div>{item.quantityNeeded} {item.name}{</div>
+//         ))}
+//       </div>
+//     </div>
+//   )
+// }
+
+
+
+
+function PricingContent(data) {
+
   return (
     <React.Fragment>
       <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
@@ -217,17 +77,17 @@ function PricingContent() {
       {/* End hero unit */}
       <Container maxWidth='md' component="main" sx={{ pt: 8, pb: 6}} disableGutters={true}>
         <Grid container spacing={2} alignItems="flex-end" columns={20} >
-          {tiers.map((tier) => (
+          {data.map((product) => (
              
             // Enterprise card is full width at sm breakpoint
             
             <Grid
               
               item
-              key={tier.title}
+              key={product.name}
               xs={12}
-              sm={tier.title === 'Enterprise' ? 12 : 6}
-              md={4}
+              // sm={tier.title === 'Enterprise' ? 12 : 6}
+              // md={4}
             >
               <Card>
               <CardMedia
@@ -235,7 +95,7 @@ function PricingContent() {
                     component="img"
                     // title="Contemplative Reptile"
                     style = {styles.media} // specify styles
-                    image={tier.imge} //{require('./b.jpg')}
+                    image={product.image} //{require('./b.jpg')}
                     />
                 {/* <CardHeader
                   title={tier.title}
@@ -262,7 +122,7 @@ function PricingContent() {
                     }}
                   >
                     <Typography component="h2" variant="h3" color="text.primary">
-                      ${tier.price}
+                      ${product.price}
                     </Typography>
                     <Typography variant="h6" color="text.secondary">
                       /mo
@@ -273,7 +133,7 @@ function PricingContent() {
                     
                   </Box>
                   <ul>
-                    {tier.description.map((line) => (
+                    {product.description.map((line) => (
                       <Typography
                         component="li"
                         variant="subtitle1"
@@ -285,11 +145,11 @@ function PricingContent() {
                     ))}
                   </ul>
                 </CardContent>
-                <CardActions>
+                {/* <CardActions>
                   <Button fullWidth variant={tier.buttonVariant}>
                     {tier.buttonText}
                   </Button>
-                </CardActions>
+                </CardActions> */}
               </Card>
             </Grid>
           ))}
@@ -330,11 +190,19 @@ function PricingContent() {
   );
 }
 
+async function products(){
+  const result = await GetProducts()
+  return result
+}
+
+products().then(PricingContent)
+
+
 PricingContent.propTypes = {
     imagePath: PropTypes.string
   };
 
 export default function Pricing() {
-  return <PricingContent />;
+  return <PricingContent/>;
 }
 

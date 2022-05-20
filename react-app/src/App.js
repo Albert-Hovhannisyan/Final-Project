@@ -35,9 +35,9 @@ function App() {
   return (
     <>
       {/* <DashboardUser /> */}
-      {/* <AppBarComponent /> */}
+      <AppBarComponent />
       {/* <UserAppBarComponent/> */}
-      <AdminAppBarComponent/>
+      {/* <AdminAppBarComponent/> */}
       {/* <Navigation /> */}
 
       {user ? (
