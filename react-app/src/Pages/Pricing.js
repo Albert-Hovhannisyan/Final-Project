@@ -15,7 +15,7 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
-import { requirePropFactory } from '@mui/material';
+import { getAvatarUtilityClass, requirePropFactory } from '@mui/material';
 import PropTypes from "prop-types";
 
 import GetProducts from "../Components/GetProducts"
@@ -33,29 +33,31 @@ const styles = {
 };
 
 
+async function getval(){
+  // const data = []
+  const data = await GetProducts()
+  // console.log(data)
+  // data1.map((product)=> (
+  //   data.push(product)
+  //   // console.log(product.name)
+  // ))
+  return data
+}
 
-// export const ValidComponent: React.FC = () => {
-//   const groceryList = [
-//     { name: "Bunch of Kale", quantityNeeded: 1 },
-//     { name: "Olive oil", quantityNeeded: 1 }
-//   ];
-//   return (
-//     <div>
-//       ✅ Valid
-//       <div>
-//         {groceryList.map((item) => (
-//           <div>{item.quantityNeeded} {item.name}{</div>
-//         ))}
-//       </div>
-//     </div>
-//   )
-// }
+const data = []
+getval().then( (result) => {
+  console.log(result);
 
+  result.map((product)=> (
+    data.push(product)
+    // console.log(product.name)
+  ))
+})
+// console.log(getval())
 
+// const data = getval()
 
-
-function PricingContent(data) {
-
+function PricingContent() {
   return (
     <React.Fragment>
       <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
@@ -133,7 +135,7 @@ function PricingContent(data) {
                     
                   </Box>
                   <ul>
-                    {product.description.map((line) => (
+                    {/* {product.description.map((line) => (
                       <Typography
                         component="li"
                         variant="subtitle1"
@@ -142,14 +144,14 @@ function PricingContent(data) {
                       >
                         {line}
                       </Typography>
-                    ))}
+                    ))} */}
                   </ul>
                 </CardContent>
-                {/* <CardActions>
-                  <Button fullWidth variant={tier.buttonVariant}>
-                    {tier.buttonText}
+                <CardActions>
+                  <Button fullWidth variant={product.buttonVariant}>
+                    {product.buttonText}
                   </Button>
-                </CardActions> */}
+                </CardActions>
               </Card>
             </Grid>
           ))}
@@ -190,19 +192,38 @@ function PricingContent(data) {
   );
 }
 
-async function products(){
-  const result = await GetProducts()
-  return result
-}
+// async function products(){
+//   const result = await GetProducts()
+//   return result
+// }
 
-products().then(PricingContent)
+// products().then(PricingContent)
 
 
+// PricingContent.propTypes = {
+//     imagePath: PropTypes.string
+//   };
+
+// const result = GetProducts()
+
+// async function hi(){
+//   const r = await GetProducts();
+//   console.log('ggggggggggggg', r)
+//   return r
+// }
+
+// const f = hi();
+
+// function PricingContent1(res) {
+  
+//   console.log('rttrge');
+//   console.log(res.res);
+// }
 PricingContent.propTypes = {
-    imagePath: PropTypes.string
-  };
+  imagePath: PropTypes.string
+};
 
 export default function Pricing() {
-  return <PricingContent/>;
+  return <PricingContent />;
 }
 
