@@ -36,7 +36,7 @@ function LogIn() {
   return (
     <div>
       <LogInFormComponent submitHandler={logIn} />
-      <RegisterFormComponent submitHandler={createUser}/>
+      {/* <RegisterFormComponent submitHandler={createUser}/> */}
     </div>
   );
 
