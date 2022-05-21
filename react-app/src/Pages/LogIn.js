@@ -9,6 +9,7 @@ function LogIn() {
   let navigate = useNavigate();
 
   const logIn = useCallback(async (data) => {
+    try{
     const result = await axios.post("http://localhost:3001/users/login", data);
     const token = result.data[0];
     const role = result.data[1];
@@ -29,7 +30,11 @@ function LogIn() {
       console.log("USER");
       navigate("/user");
     }
+    } catch(error){
+      return alert(error)
+    }
   }, []);
+  
 
   return (
     <div>

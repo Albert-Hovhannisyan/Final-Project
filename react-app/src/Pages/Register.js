@@ -9,7 +9,7 @@ function Register() {
   let navigate = useNavigate();
 
   const registerUser = useCallback(async (data) => {
-    console.log(data);
+    try{
     const result = await axios.post("http://localhost:3001/users/register", data);
     const token = result.data[0];
     const role = result.data[1];
@@ -20,6 +20,9 @@ function Register() {
       localStorage.setItem("x-access-token", JSON.stringify(token));
       navigate("/user");
     }
+  }catch(error){
+    alert(error)
+  }
   }, []);
 
   return (

@@ -20,7 +20,7 @@ module.exports = {
         existing = await User.findOne({email});
 
         if(existing){
-            return "User already exists"
+            throw new Error("User already exists")
         }
         const user = new User(data);
 
