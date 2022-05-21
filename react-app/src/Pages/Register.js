@@ -34,11 +34,7 @@ function Register() {
   }, []);
 
   return (
-    <div>
-      <div>
-        <RegisterFormComponent submitHandler={registerUser} />
-      </div>
-    </div>
+    <RegisterFormComponent submitHandler={registerUser} />
   );
 }
 

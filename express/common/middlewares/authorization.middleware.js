@@ -3,7 +3,7 @@ const usersService = require('../../users/users.service');
 const jwt = require('jsonwebtoken');
 
 module.exports = async (req, res, next) => {
-    if (req.url === '/users/register' || req.url === '/users/login') {
+    if (req.url === '/users/register' || req.url === '/users/login' || req.url === '/products') {
         return next();
     }
 

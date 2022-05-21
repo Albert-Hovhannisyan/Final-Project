@@ -1,8 +1,8 @@
 export default function authHeader() {
-    const user = JSON.parse(localStorage.getItem('x-access-token'));
-    if (user){ //&& user.accessToken) {
-      // for Node.js Express back-end
-      return { 'x-access-token': user }; //{ 'x-access-token': user.accessToken };
+    const token = JSON.parse(localStorage.getItem('x-access-token'));
+    const role = JSON.parse(localStorage.getItem('role'));
+    if (token && role=="admin"){
+      return { 'x-access-token': token};
     } else {
       return {};
     }

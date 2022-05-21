@@ -11,7 +11,7 @@ route.delete('/:id/', asyncHandler(async (req, res) => {
     res.send(removedProduct);
 }))
 
-route.post('/', asyncHandler(async (req, res) => {
+route.post('/create', asyncHandler(async (req, res) => {
     const newProduct = await productsService.createProduct(req.body);
     res.status(201).send(newProduct);
 }))

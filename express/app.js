@@ -11,20 +11,18 @@ const port = 3001;
 
 dotenv.config();
 
-const cors = require("cors") //Newly added
-
-app.use(cors()) // Newly added
-
+const cors = require("cors") 
+app.use(cors()) 
 
 app.use(express.json({ limit: "50mb" }));
 
 app.use(express.json());
 
-app.use('/products', productController);
-
 app.use(asyncHandler(authMiddleware));
 
 app.use('/users', userController);
+
+app.use('/products', productController);
 
 // app.use(function (req, res, next) {
 

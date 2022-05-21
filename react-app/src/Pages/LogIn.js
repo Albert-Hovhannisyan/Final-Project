@@ -43,7 +43,9 @@ function LogIn() {
 
     if (token) {
       localStorage.setItem("x-access-token", JSON.stringify(token));
+      localStorage.setItem("role", JSON.stringify(role));
     }
+    
     if (role == "admin") {
       console.log("ADMIN");
       navigate("/admin");
