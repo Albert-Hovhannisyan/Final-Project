@@ -62,48 +62,48 @@ function App() {
   );
 }
 
-const Navigation = () => (
-  <nav>
-    <Link to="/home">Home</Link>
-    <Link to="/login">LogIn</Link>
-    <Link to="/register">Register</Link>
-    <Link to="/dashboard">Dashboard</Link>
-    <Link to="/analytics">Analytics</Link>
-    <Link to="/admin">Admin</Link>
-  </nav>
-);
+// const Navigation = () => (
+//   <nav>
+//     <Link to="/home">Home</Link>
+//     <Link to="/login">LogIn</Link>
+//     <Link to="/register">Register</Link>
+//     <Link to="/dashboard">Dashboard</Link>
+//     <Link to="/analytics">Analytics</Link>
+//     <Link to="/admin">Admin</Link>
+//   </nav>
+// );
 
-const Dashboard = () => {
-  return;
-};
+// const Dashboard = () => {
+//   return;
+// };
 
-const Analytics = () => {
-  return (
-    <h2>
-      Analytics (Protected: authenticated user with permission
-      'analyze' required)
-    </h2>
-  );
-};
+// const Analytics = () => {
+//   return (
+//     <h2>
+//       Analytics (Protected: authenticated user with permission
+//       'analyze' required)
+//     </h2>
+//   );
+// };
 
-const Admin = () => {
-  return (
-    <h2>
-      Admin (Protected: authenticated user with role 'admin' required)
-    </h2>
-  );
-};
+// const Admin = () => {
+//   return (
+//     <h2>
+//       Admin (Protected: authenticated user with role 'admin' required)
+//     </h2>
+//   );
+// };
 
-const ProtectedRoute = ({
-  isAllowed,
-  redirectPath = '/home',
-  children,
-}) => {
-  if (!isAllowed) {
-    return <Navigate to={redirectPath} replace />;
-  }
+// const ProtectedRoute = ({
+//   isAllowed,
+//   redirectPath = '/home',
+//   children,
+// }) => {
+//   if (!isAllowed) {
+//     return <Navigate to={redirectPath} replace />;
+//   }
 
-  return children ? children : <Outlet />;
-};
+//   return children ? children : <Outlet />;
+// };
 
 export default App;
