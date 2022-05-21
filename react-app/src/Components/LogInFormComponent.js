@@ -1,5 +1,4 @@
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
 
 function LogInFormComponent({submitHandler}) {
   const { register, handleSubmit, reset } = useForm();

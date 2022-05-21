@@ -9,7 +9,7 @@ function UserAppBarComponent(){
     <Box m={1} display="flex" justifyContent="center" alignItems="center" fontSize={25}>User</Box>
     <Box m={1} display="flex" justifyContent="flex-end" alignItems="flex-end" position={"relative"}>
       <nav>
-        <Link to="/home">
+        <Link to="/homeUser">
           <Button variant="contained">
             Home
           </Button>

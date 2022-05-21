@@ -1,6 +1,5 @@
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Box from '@mui/material/Box';
 import {Link} from "react-router-dom"
 
@@ -9,7 +8,7 @@ function AdminAppBarComponent(){
     <Box m={1} display="flex" justifyContent="center" alignItems="center" fontSize={25}>Admin</Box>
     <Box m={1} display="flex" justifyContent="flex-end" alignItems="flex-end" position={"relative"}>
       <nav>
-        <Link to="/home">
+        <Link to="/homeAdmin">
           <Button variant="contained">
             Home
           </Button>
