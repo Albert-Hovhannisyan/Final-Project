@@ -12,15 +12,12 @@ import Pricing from "./Pages/Pricing";
 function App() {
   return (
     <>
-      <AppBarComponent/>
       <Routes>
-        <Route index element={<Pricing />} />
-        <Route path="home" element={<Pricing />} />
-        <Route path="register" element={<Register />} />
-        <Route path="login" element={<LogIn />} />
+        <Route index element={<div> <AppBarComponent/><Pricing /></div>} />
+        <Route path="home" element={<div> <AppBarComponent/><Pricing /></div>} />
+        <Route path="register" element={<div> <AppBarComponent/><Register /></div>} />
+        <Route path="login" element={<div> <AppBarComponent/><LogIn /></div>} />
         <Route path="addproduct" element={<div><AdminAppBarComponent /><AddProduct/></div>} />
-        <Route path="admin" element={<AdminAppBarComponent />} />
-        <Route path="user" element={<UserAppBarComponent />} />
         <Route path="homeUser" element={<div><UserAppBarComponent /><Pricing/></div>} />
         <Route path="homeAdmin" element={<div><AdminAppBarComponent /><Pricing/></div>} />
         <Route path="*" element={<p>There's nothing here: 404!</p>} />

@@ -25,10 +25,10 @@ function LogIn() {
     
     if (role === "admin") {
       console.log("ADMIN");
-      navigate("/admin");
+      navigate("/homeAdmin");
     } else {
       console.log("USER");
-      navigate("/user");
+      navigate("/homeUser");
     }
     } catch(error){
       return alert(error)
